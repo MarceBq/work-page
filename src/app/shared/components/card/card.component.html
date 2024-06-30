@@ -1,0 +1,29 @@
+<mat-card
+  [ngClass]="{ 'expanded-card': isExpanded }"
+  appearance="outlined"
+  class="custom-card"
+>
+  <mat-card-header *ngIf="title || subtitle">
+    <mat-card-title *ngIf="title">{{ title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="subtitle">{{ subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img mat-card-image [src]="imageUrl" *ngIf="imageUrl" alt="Card image" />
+
+  <mat-card-content>
+    <h6 *ngIf="featuring">{{ featuring }}</h6>
+    <h2 *ngIf="bodyWork">{{ bodyWork }}</h2>
+    <h3 *ngIf="published">{{ published }}</h3>
+    <h4 *ngIf="date">{{ date }}</h4>
+    <p *ngIf="content">
+      <span
+        [innerHTML]="isExpanded || !enableReadMore ? content : previewContent"
+      ></span>
+      <button mat-button *ngIf="enableReadMore" (click)="toggleContent()">
+        {{ isExpanded ? "Show Less" : "Read More" }}
+      </button>
+    </p>
+    <h5 *ngIf="details">{{ details }}</h5>
+    <a *ngIf="learn" href="mailto:{{ learn }}">{{ learn }}</a>
+  </mat-card-content>
+</mat-card>

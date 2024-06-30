@@ -1,0 +1,103 @@
+.exhibitions-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.description {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.exhibitions-container h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.exhibitions-container p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.spring-section {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.schedule-exhibition-container {
+  width: 80%;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.schedule-exhibition-container h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  grid-column: span 2;
+}
+
+.schedule-exhibition-container div {
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.schedule-exhibition-container h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.schedule-exhibition-container h4 {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.spread{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.spread-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.spread-container card-component{
+  width: 45%;
+}
+
+.spread button{
+  width: 25%;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .schedule-exhibition-container {
+    grid-template-columns: 1fr;
+  }
+
+  .exhibitions-container h1 {
+    font-size: 24px;
+  }
+
+  .exhibitions-container p {
+    font-size: 16px;
+  }
+
+  .schedule-exhibition-container h2 {
+    font-size: 20px;
+  }
+}
