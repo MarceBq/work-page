@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       const element = document.querySelector(
-        '[style*="z-index: 999999999"]'
+        '[style*="z-index: 999999999;"]'
       ) as any;
       element.style.display = 'none';
     }, 0);
@@ -31,6 +31,12 @@ export class AppComponent implements OnInit {
     } else {
       this.username = '';
     }
+  }
+
+  public onClickLogout() {
+    localStorage.removeItem('userData');
+    this.updateLoginStatus();
+    this.router.navigate(['']);
   }
 
   public goLogin() {

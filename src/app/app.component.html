@@ -1,20 +1,37 @@
 <div class="app-container">
-  <div class="container">
-    <mat-toolbar>
-      <div class="support">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1024px-Angular_full_color_logo.svg.png" alt="logo" />
-      </div>
+  <mat-toolbar color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer"></span>
+    <span class="title">YALE SCHOOL OF ART</span>
+    <span class="spacer"></span>
+    <div *ngIf="!username" class="validate">
+      <button class="login-button" (click)="goLogin()">Log In</button>
+      <button class="register-button" (click)="goRegister()">Register</button>
+    </div>
+    <div *ngIf="username" class="success-process">
+      <p>Hello, {{ username }}</p>
+      <button class="log-out-button" (click)="onClickLogout()">
+        Log Out
+      </button>
+    </div>
+  </mat-toolbar>
 
-      <h1 class="title">YALE SCHOOL OF ART</h1>
-
-      <div *ngIf="!username" class="validate">
-        <button class="login-button" (click)="goLogin()">Log In</button>
-        <button class="register-button" (click)="goRegister()">Register</button>
-      </div>
-
-      <p *ngIf="username ? username : ''">Hello, {{ username }}</p>
-    </mat-toolbar>
-  </div>
-
-  <router-outlet></router-outlet>
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav mode="side" opened>
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="'/Home'">Home</a>
+        <a mat-list-item [routerLink]="'/About'">About</a>
+        <a mat-list-item [routerLink]="'/Apply'">Apply</a>
+        <a mat-list-item [routerLink]="'/Exhibitions'">Exhibitions</a>
+        <a mat-list-item [routerLink]="'/Publications'">Publications</a>
+        <a mat-list-item [routerLink]="'/News'">News</a>
+        <a mat-list-item [routerLink]="'/PublicEvents'">Public Events</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
