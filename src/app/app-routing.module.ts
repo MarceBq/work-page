@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LoginComponent } from './school-page/pages/login/login.component';
 import { RegisterComponent } from './school-page/pages/register/register.component';
-import { LandingComponent } from './school-page/pages/landing/landing.component';
+// import { LandingComponent } from './school-page/pages/landing/landing.component';
 
 import { AboutComponent } from './school-page/tabs/about/about.component';
 import { ApplyComponent } from './school-page/tabs/apply/apply.component';
@@ -16,9 +16,8 @@ import { HomeComponent } from './school-page/tabs/home/home.component';
 const routes: Routes = [
   {
     path: '',
-    component: LandingComponent,
+    component: HomeComponent,
   },
-
   {
     path: 'Home',
     component: HomeComponent,
